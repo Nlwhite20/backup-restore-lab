@@ -1,6 +1,9 @@
 # Backup and Restore Lab (restic + rest-server)
 
-> Status: **in progress.** Backup server running (append-only, TLS, two client accounts, firewall-restricted); both clients backed up and verified (`restic check`); restore tests next.
+> Status: **built and tested (2026-10-13).** Append-only backup server with TLS; encrypted daily backups
+> from two clients; restore tests R1b-R5 passed (R1 failed on a test-script defect, kept on record);
+> verified third copy on the Mac (not off-site). Retention pruning and alert notification are open.
+> See [results](docs/results.md).
 
 ## Purpose
 
@@ -18,6 +21,7 @@ a compromised client, and are proven by timed restore tests with written evidenc
 
 ## Documentation
 
+- [Results](docs/results.md): restore tests and whether the standard is met
 - [Backup standard](docs/backup-standard.md): scope, 3-2-1, RPO/RTO, retention, encryption
 - [Restore test plan](docs/restore-test-plan.md)
 - [Build log](docs/build-log.md)
