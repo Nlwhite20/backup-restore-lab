@@ -1,0 +1,16 @@
+# /etc/default/restic-rest-server (lab configuration, no secrets)
+# TCP or UNIX listen address.
+LISTEN = :8000
+
+# Directory to store backups.
+BACKUP_DIR = /srv/restic
+
+# Extra arguments: password file, TLS with a pinned self-signed certificate,
+# append-only (clients cannot delete or modify existing backups),
+# private repos (each account can only use the repository under its own name).
+ARGS = "\
+  --htpasswd-file /etc/restic-rest-server/users.htpasswd \
+  --tls --tls-cert /etc/restic-rest-server/tls/cert.pem --tls-key /etc/restic-rest-server/tls/key.pem \
+  --append-only \
+  --private-repos \
+"

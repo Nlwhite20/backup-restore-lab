@@ -1,6 +1,6 @@
 # Backup and Restore Lab (restic + rest-server)
 
-> Status: **planning.** Preflight complete (2026-10-13); nothing installed yet.
+> Status: **in progress.** Backup server running (append-only, TLS, two client accounts, firewall-restricted); both clients backed up and verified (`restic check`); restore tests next.
 
 ## Purpose
 
@@ -31,5 +31,7 @@ command and approved every change and commit. Rules: [CLAUDE.md](CLAUDE.md).
 | What I asked for | What the AI proposed or assumed | What I checked or changed | Result |
 | --- | --- | --- | --- |
 | Lab 5 topic | A Windows 11 endpoint lab in UTM | Checked Microsoft's licensing page first: only Parallels is authorized on Apple silicon, and each instance needs a Windows 11 Pro licence | Chose this backup lab instead; no unlicensed install |
+| Enable the packaged service | Configure and start it | Asked to inspect the shipped password file first (it was not empty) | It contained only comments: no default account |
+| Copy the certificate to clients | A shell loop using `$h:evidence` | The copy failed; zsh treats `$h:e` as a modifier | Fixed with `${h}`; no change had been made |
 
 Limitations: single-operator lab, so review is not independent.
