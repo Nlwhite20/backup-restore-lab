@@ -1,0 +1,8 @@
+evidence/
+*.log
+*.pass
+*.key
+*.pem
+.htpasswd
+.env
+.DS_Store
