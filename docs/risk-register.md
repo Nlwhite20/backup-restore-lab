@@ -12,3 +12,4 @@ Status as of 2026-10-13.
 | R-06 | `soc-endpoint-01` has 3.0 GB free; restic cache and logs could fill it | Low | Medium | Open | Backup set measured at about 2.4 MB; watch free space at each review |
 | R-07 | Self-signed TLS certificate on the backup server could be trusted incorrectly | Low | Medium | Open | Pin the server certificate on each client with `--cacert` |
 | R-08 | VM clock drift affects schedules and evidence timestamps | Medium | Medium | Open | Clock check before timed tests (lesson from earlier labs) |
+| R-09 | restic exits 0 when the server refuses a delete (observed with 0.18.1 in R4), so automation that trusts exit codes would miss it | Certain | Low | Open | Check command output, not only exit codes, in scripts and monitoring |
